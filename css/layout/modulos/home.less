@@ -1,5 +1,33 @@
 [modulo=home]{
+	#fotoPerfil{
+		max-height: 100px;
+		max-width: 100px;
+	}
+	
 	.bienvenida{
 		height: 100%;
+		[campo=nombre]{
+			text-transform: capitalize;
+		}
+	}
+	
+	.servicios{
+		@media (max-width: @mq-xs-max){
+			margin-top: 5px;
+			margin-bottom: 5px;
+		}
+		
+		.card-body{
+			min-height: 200px;
+			max-height: 300px;
+			
+			overflow-x: scroll;
+		}
+		
+		.orden{
+			[campo=direccion]{
+				font-size: 12px;
+			}
+		}
 	}
 }

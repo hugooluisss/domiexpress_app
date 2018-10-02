@@ -12,6 +12,49 @@ function callHome(){
 		}
 	});
 	
+	getListaPublicadas();
+	function getListaPublicadas(){
+		$.post(server + "listaordenespublicadas", {
+			"movil": true,
+			"json": true
+		}, function(ordenes){
+			$("#dvDisponibles").find(".list-group").find("a").remove();
+			$.each(ordenes, function(i, orden){
+				pl = $(plantillas["itemOrden"]);
+				setDatos(pl, orden);
+				$("#dvDisponibles").find(".list-group").append(pl);
+				pl.find("[campo=nombreEstado]").css("color", orden.colorEstado);
+				
+				pl.attr("idOrden", orden.idOrden);
+				pl.click(function(){
+					callOrdenVista($(this).attr("idOrden"));
+				});
+			});
+		}, "json");
+	}
+	
+	getListaOrdenesUsuario();
+	function getListaOrdenesUsuario(){
+		$.post(server + "listaordenesrunner", {
+			"runner": objUsuario.idUsuario,
+			"movil": true,
+			"json": true
+		}, function(ordenes){
+			$("#dvAdjudicadas").find(".list-group").find("a").remove();
+			$.each(ordenes, function(i, orden){
+				pl = $(plantillas["itemOrden"]);
+				setDatos(pl, orden);
+				$("#dvAdjudicadas").find(".list-group").append(pl);
+				
+				pl.attr("idOrden", orden.idOrden);
+				pl.click(function(){
+					callOrdenVista($(this).attr("idOrden"));
+				});
+				
+				pl.find("[campo=nombreEstado]").css("color", orden.colorEstado);
+			});
+		}, "json");
+	}
 	
 	
 		

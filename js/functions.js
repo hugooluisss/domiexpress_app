@@ -116,13 +116,18 @@ var mensajes = {
 	},
 };
 
-function setDatos(plantilla, datos){
+function setDatos(plantilla, datos, before){
+	before = before == undefined?'':(before + "-");
+	
 	$.each(datos, function(i, valor){
-		antes = plantilla.find("[campo=" + i + "]").attr("before") || ""; 
-		despues = plantilla.find("[campo=" + i + "]").attr("after") || ""; 
+		antes = plantilla.find("[campo=" + before + i + "]").attr("before") || ""; 
+		despues = plantilla.find("[campo=" + before + i + "]").attr("after") || ""; 
 		valor =  antes + valor + despues;
-		plantilla.find("[campo=" + i + "]").html(valor);
-		plantilla.find("[campo=" + i + "]").val(valor);
+		plantilla.find("[campo=" + before + i + "]").html(valor);
+		plantilla.find("[campo=" + before + i + "]").val(valor);
+		
+		if (typeof datos[i] == 'object')
+			setDatos(plantilla, datos[i], i);
 	});
 }
 

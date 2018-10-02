@@ -48,6 +48,8 @@ $(document).ready(function(){
 		
 	
 	plantillas["home"] = "";
+	plantillas["itemOrden"] = "";
+	plantillas["ordenVistaPrevia"] = "";
 	
 	setPanel();
 	
