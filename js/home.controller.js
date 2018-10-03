@@ -48,7 +48,7 @@ function callHome(){
 				
 				pl.attr("idOrden", orden.idOrden);
 				pl.click(function(){
-					callOrdenVista($(this).attr("idOrden"));
+					callOrdenTrabajo($(this).attr("idOrden"));
 				});
 				
 				pl.find("[campo=nombreEstado]").css("color", orden.colorEstado);

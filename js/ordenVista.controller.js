@@ -16,6 +16,7 @@ function callOrdenVista(idOrden){
 	
 	orden.get({
 		"id": idOrden,
+		"runner": objUsuario.idUsuario,
 		"fn": {
 			before: function(){
 				blockUI("Cargando detalle del servicio");

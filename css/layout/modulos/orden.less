@@ -2,4 +2,25 @@
 	#mapa{
 		height: 300px;
 	}
+	
+	.calificacion{
+		direction: rtl;
+		unicode-bidi: bidi-override;
+    
+		input[type="radio"] {
+			display: none;
+		}
+		
+		label{
+			color: @grisClaro;
+		}
+		
+		label:hover, label:hover ~ label {
+			color: orange;
+		}
+
+		input[type="radio"]:checked ~ label {
+			color: orange;
+		}
+	}
 }

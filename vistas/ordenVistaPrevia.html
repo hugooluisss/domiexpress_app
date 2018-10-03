@@ -12,12 +12,12 @@
 			<div class="card-body">
 				<ul class="list-group"> 
 					<li campo="cliente-razonsocial" before='<i class="fa fa-building-o" aria-hidden="true"></i> ' class="list-group-item"></li>
-					<li before='<i class="fa fa-map-marker" aria-hidden="true"></i> ' class="list-group-item">
-						<span campo="direccion"></span><br /><span class="text-muted" campo="referencia"></span>
+					<li class="list-group-item">
+						<span before='<i class="fa fa-map-signs" aria-hidden="true"></i> ' campo="direccion"></span><br /><span class="text-muted" campo="referencia"></span>
 					</li>
 					<li campo="fecha" before='<i class="fa fa-calendar" aria-hidden="true"></i> ' class="list-group-item"></li>
 					<li campo="horas" before='<i class="fa fa-clock-o" aria-hidden="true"></i> ' after=" Horas contratadas" class="list-group-item"></li>
-					<li campo="ganancia" before='<i class="fa fa-money" aria-hidden="true"></i> ' after=" Horas contratadas" class="list-group-item"></li>
+					<li campo="ganancia" before='<i class="fa fa-money" aria-hidden="true"></i> ' class="list-group-item"></li>
 				</ul>
 				<br />
 				<div class="row">
@@ -29,7 +29,10 @@
 		</div>
 	</div>
 	<div class="col-12 col-md-6">
-		<div class="card">
+		<div class="card card-tutifruti separador">
+			<div class="card-header">
+				Ubicación del servicio
+			</div>
 			<div class="card-body" id="mapa">
 			</div>
 		</div>

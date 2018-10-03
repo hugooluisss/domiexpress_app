@@ -1,0 +1,123 @@
+<div class="row">
+	<div class="col-6">
+		<div class="btn btn-danger btn-block" showpanel="home"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i> Regresar</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-12">
+		<div class="card card-tutifruti">
+			<div class="card-header">
+				<span campo="folio" before="Folio "></span>
+			</div>
+			<div class="card-body" id="mapa">
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-12 col-md-8">
+		<div class="card card-tutifruti separador">
+			<div class="card-header">
+				Detalle
+			</div>
+			<div class="card-body">
+				<ul class="list-group"> 
+					<li campo="cliente-razonsocial" before='<i class="fa fa-building-o" aria-hidden="true"></i> ' class="list-group-item"></li>
+					<li class="list-group-item">
+						<span before='<i class="fa fa-map-signs" aria-hidden="true"></i> ' campo="direccion"></span><br /><span class="text-muted" campo="referencia"></span>
+					</li>
+					<li campo="fecha" before='<i class="fa fa-calendar" aria-hidden="true"></i> ' class="list-group-item"></li>
+					<li campo="horas" before='<i class="fa fa-clock-o" aria-hidden="true"></i> ' after=" Horas contratadas" class="list-group-item"></li>
+					<li campo="ganancia" before='<i class="fa fa-money" aria-hidden="true"></i> ' after=" Horas contratadas" class="list-group-item"></li>
+				</ul>
+				<br />
+			</div>
+		</div>
+	</div>
+	<div class="col-12 col-md-4">
+		<div class="card card-tutifruti separador">
+			<div class="card-header">
+				Acciones
+			</div>
+			<div class="card-body">
+				<button class="btn btn-primary btn-block" data-toggle="modal" data-target="#winReporte">Enviar evidencias</button>
+				<br />
+				<button class="btn btn-danger btn-block" data-toggle="modal" data-target="#winFinalizar">Finalizar trabajo</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<form id="frmEvidencia" onsubmit="javascript: return false;">
+	<div class="modal" id="winReporte">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h5 class="modal-title">Enviar evidencia</h5>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+		
+				<!-- Modal body -->
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-12 text-right">
+							<button class="btn btn-xs btn-default" title="Tomar fotografía"><i class="fa fa-camera" aria-hidden="true"></i></button>
+							<button class="btn btn-xs btn-default" title="Subir desde la galería"><i class="fa fa-picture-o" aria-hidden="true"></i></button>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="txtComentario">Comentario:</label>
+						<textarea class="form-control" id="txtComentario" name="txtComentario" rows="6"></textarea>
+					</div>
+				</div>
+		
+				<!-- Modal footer -->
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-primary">Enviar</button>
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+
+
+<div class="modal" id="winFinalizar">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<!-- Modal Header -->
+			<div class="modal-header">
+				<h5 class="modal-title">Finalizar y calificar</h5>
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+			</div>
+	
+			<!-- Modal body -->
+			<div class="modal-body text-center">
+				<p>Estás por indicar que el servicio ha concluido ¿Como fue el trato con el cliente?</p>
+				<p class="calificacion">
+					<input id="radio1" type="radio" name="estrellas" value="5">
+					<label for="radio1"><i class="fa fa-2x fa-star" aria-hidden="true"></i></label>
+					
+					<input id="radio2" type="radio" name="estrellas" value="4">
+					<label for="radio2"><i class="fa fa-2x fa-star" aria-hidden="true"></i></label>
+					
+					<input id="radio3" type="radio" name="estrellas" value="3">
+					<label for="radio3"><i class="fa fa-2x fa-star" aria-hidden="true"></i></label>
+					
+					<input id="radio4" type="radio" name="estrellas" value="2">
+					<label for="radio4"><i class="fa fa-2x fa-star" aria-hidden="true"></i></label>
+	    
+					<input id="radio5" type="radio" name="estrellas" value="1">
+					<label for="radio5"><i class="fa fa-2x fa-star" aria-hidden="true"></i></label>
+				</p>
+			</div>
+	
+			<!-- Modal footer -->
+			<div class="modal-footer">
+				<button type="submit" class="btn btn-primary">Enviar</button>
+				<button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+			</div>
+		</div>
+	</div>
+</div>
