@@ -9,6 +9,9 @@ function callHome(){
 			after: function(datos){
 				setDatos($(".bienvenida"), datos);
 				
+				if(datos.imgPerfil != '')
+					$("#fotoPerfil").attr("src", server + datos.imgPerfil);
+				
 				$(".bienvenida .perfilCamara").click(function(){
 					navigator.camera.getPicture(function(imageURI){
 						setFotoPerfil(imageURI);

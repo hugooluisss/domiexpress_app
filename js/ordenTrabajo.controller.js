@@ -125,4 +125,29 @@ function callOrdenTrabajo(idOrden){
 			});
 		}
 	});
+	
+	$("#btnEnviarCalificacion").click(function(){
+		var calificacion = $('input[name=estrellas]:checked').val();
+		if (calificacion == undefined)
+			mensajes.alert({"titulo": "Calificación", "mensaje": "Escoge una estrella"});
+		else{
+			orden.finalizar({
+				"id": idOrden,
+				"calificacion": calificacion,
+				"fn": {
+					before: function(){
+						blockUI("Espera un momento por favor");
+					}, after: function(resp){
+						unBlockUI();
+						if (resp.band){
+							$("#winFinalizar").modal("hide");
+							mensajes.alert({"titulo": "Servicio terminado", "mensaje": "Muchas gracias, le informaremos al cliente para que lo antes posible apruebe la finalización del servicio"});
+							callHome();
+						}else
+							mensajes.alert({"titulo": "Error", "mensaje": "No se pudo finalizar el servicio"});
+					}
+				}
+			})
+		}
+	});
 }
