@@ -8,7 +8,7 @@ function callOrdenTrabajo(idOrden){
 	var datosOrden = undefined;
 	var coordenadas = undefined;
 	
-	posicionActual = new google.maps.Marker({
+	var posicionActual = new google.maps.Marker({
 		icon: "img/miPosicion.png"
 	});
 	

@@ -103,18 +103,21 @@ function callHome(){
 	});
 	
 	function setFotoPerfil(imageURI){
-		var img = $("<img />");
-		$("#fotoPerfil").attr("src", "data:image/jpeg;base64," + imageURI);
-		img.attr("src2", imageURI);
-
-		img.click(function(){
-			var foto = $(this);
-			alertify.confirm("Se eliminará la fotografía del reporte ¿seguro?", function (e) {
-				if (e) {
-					foto.remove();
-					alertify.success("Fotografía eliminada");
+		var img = $("#fotoPerfil");
+		objUsuario.setFotoPerfil({
+			"img": imageURI,
+			"id": objUsuario.idUsuario,
+			"fn": {
+				before: function(){
+					blockUI("Estamos actualizando tu foto de perfil");
+				}, after: function(resp){
+					if (resp.band){
+						$("#fotoPerfil").attr("src", "data:image/jpeg;base64," + imageURI);
+						img.attr("src2", imageURI);
+					}else
+						mensajes.alert("No se pudo actualizar tu fotografía");
 				}
-			});
+			}
 		});
 	}
 }
