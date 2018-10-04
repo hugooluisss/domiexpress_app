@@ -115,11 +115,11 @@
 		</gap:config-file>
 
 		<gap:config-file platform="ios" parent="NSPhotoLibraryUsageDescription">
-			<string>Permite subir evidencias de realización del servicio</string>
+			<string>Permite subir evidencias de realizacion del servicio</string>
 		</gap:config-file>
 
 		<gap:config-file platform="ios" parent="NSCameraUsageDescription">
-			<string>Permite subir evidencias de realización del servicio</string>
+			<string>Permite subir evidencias de realizacion del servicio</string>
 		</gap:config-file>
 
 		<!--
