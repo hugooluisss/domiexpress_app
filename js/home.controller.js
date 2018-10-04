@@ -104,9 +104,7 @@ function callHome(){
 	
 	function setFotoPerfil(imageURI){
 		var img = $("<img />");
-		$("#fotoPerfil").attr("src", "data:image/jpeg;base64," + imageURI)
-		$("#lstImg").append(img);
-		img.attr("src", );
+		$("#fotoPerfil").attr("src", "data:image/jpeg;base64," + imageURI);
 		img.attr("src2", imageURI);
 
 		img.click(function(){
