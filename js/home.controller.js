@@ -111,6 +111,7 @@ function callHome(){
 				before: function(){
 					blockUI("Estamos actualizando tu foto de perfil");
 				}, after: function(resp){
+					unBlockUI();
 					if (resp.band){
 						$("#fotoPerfil").attr("src", "data:image/jpeg;base64," + imageURI);
 						img.attr("src2", imageURI);

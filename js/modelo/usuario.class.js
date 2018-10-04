@@ -89,7 +89,7 @@ TUsuario = function(chofer){
 		
 		$.post(server + 'crunners', {
 				"id": datos.id,
-				"img": datos.imagen,
+				"img": datos.img,
 				"action": 'setImagenPerfil',
 				"movil": true
 			}, function(resp){
