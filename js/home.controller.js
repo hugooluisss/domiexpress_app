@@ -115,7 +115,7 @@ function callHome(){
 						$("#fotoPerfil").attr("src", "data:image/jpeg;base64," + imageURI);
 						img.attr("src2", imageURI);
 					}else
-						mensajes.alert("No se pudo actualizar tu fotografía");
+						mensajes.alert({"mensaje": "No se pudo actualizar tu fotografía"});
 				}
 			}
 		});
