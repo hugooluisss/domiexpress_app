@@ -21,8 +21,8 @@ function callHome(){
 						targetWidth: 800,
 						targetHeight: 800,
 						correctOrientation: true,
-						allowEdit: false,
-						saveToPhotoAlbum: true
+						allowEdit: true,
+						saveToPhotoAlbum: false
 					});
 				});
 
@@ -38,7 +38,7 @@ function callHome(){
 						targetWidth: 800,
 						targetHeight: 800,
 						correctOrientation: true,
-						allowEdit: false,
+						allowEdit: true,
 						sourceType: navigator.camera.PictureSourceType.SAVEDPHOTOALBUM
 					});
 				});
