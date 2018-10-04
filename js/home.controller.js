@@ -8,6 +8,40 @@ function callHome(){
 		fn: {
 			after: function(datos){
 				setDatos($(".bienvenida"), datos);
+				
+				$(".bienvenida .perfilCamara").click(function(){
+					navigator.camera.getPicture(function(imageURI){
+						setFotoPerfil(imageURI);
+					}, function(message){
+						alertify.error("Ocurrio un error al obtener la imagen");
+					}, {
+						quality: 100,
+						destinationType: Camera.DestinationType.DATA_URL,
+						encodingType: Camera.EncodingType.JPEG,
+						targetWidth: 800,
+						targetHeight: 800,
+						correctOrientation: true,
+						allowEdit: false,
+						saveToPhotoAlbum: true
+					});
+				});
+
+				$(".bienvenida .perfilGaleria").click(function(){
+					navigator.camera.getPicture(function(imageURI){
+						setFotoPerfil(imageURI);
+					}, function(message){
+						alertify.error("Ocurrio un error al obtener la imagen");
+					}, {
+						quality: 100,
+						destinationType: Camera.DestinationType.DATA_URL,
+						encodingType: Camera.EncodingType.JPEG,
+						targetWidth: 800,
+						targetHeight: 800,
+						correctOrientation: true,
+						allowEdit: false,
+						sourceType: navigator.camera.PictureSourceType.SAVEDPHOTOALBUM
+					});
+				});
 			}
 		}
 	});
@@ -56,8 +90,6 @@ function callHome(){
 		}, "json");
 	}
 	
-	
-		
 	$("#btnSalir").click(function(){
 		alertify.confirm("¿Seguro?", function(e){
     		if(e) {
@@ -69,4 +101,22 @@ function callHome(){
 	    	}
     	});
 	});
+	
+	function setFotoPerfil(imageURI){
+		var img = $("<img />");
+		$("#fotoPerfil").attr("src", "data:image/jpeg;base64," + imageURI)
+		$("#lstImg").append(img);
+		img.attr("src", );
+		img.attr("src2", imageURI);
+
+		img.click(function(){
+			var foto = $(this);
+			alertify.confirm("Se eliminará la fotografía del reporte ¿seguro?", function (e) {
+				if (e) {
+					foto.remove();
+					alertify.success("Fotografía eliminada");
+				}
+			});
+		});
+	}
 }

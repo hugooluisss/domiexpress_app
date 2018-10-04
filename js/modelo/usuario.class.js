@@ -83,4 +83,21 @@ TUsuario = function(chofer){
 					datos.fn.after(data);
 			}, "json");
 	};
+	
+	this.setFotoPerfil = function(datos){
+		if (datos.fn.before !== undefined) datos.fn.before();
+		
+		$.post(server + 'crunners', {
+				"id": datos.id,
+				"img": datos.imagen,
+				"action": 'setImagenPerfil',
+				"movil": true
+			}, function(resp){
+				if (resp.band == false)
+					console.log(resp.mensaje);
+					
+				if (datos.fn.after !== undefined)
+					datos.fn.after(resp);
+			}, "json");
+	}
 };
