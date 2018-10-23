@@ -43,6 +43,7 @@ TOrden = function(){
 				"latitude": datos.latitude,
 				"longitude": datos.longitude,
 				"comentario": datos.comentario,
+				"imagen": datos.imagen,
 				"action": "addEvidencia",
 				"movil": true
 			}, function(data){

@@ -27,29 +27,6 @@ function callOrdenTrabajo(idOrden){
 		}
 	});
 	
-	$("#btnAceptar").click(function(){
-		mensajes.confirm({"titulo": "Aceptar", "mensaje": "¿Seguro de aceptar el servicio?", "botones": "Aceptar, Cancelar", "funcion": function(resp){
-			if (resp == 1){
-				orden.adjudicar({
-					"id": idOrden,
-					"fn": {
-						before: function(){
-							blockUI("Espera un momento, te estamos asignando la carga");
-						},
-						after: function(resp){
-							unBlockUI();
-							if (resp.band){
-								mensajes.alert({"titulo": "Felicidades", "mensaje": "Felicidades, la carga con folio " + datosOrden.folio + " te fue asignada, ahora preparate para realizar el servicio en tiempo y forma"});
-								callHome();
-							}else
-								mensajes.alert({"titulo": "Error", "mensaje": "No pudo ser asignada la carga"});
-						}
-					}
-				});
-			}
-		}});
-	});
-	
 	function setMapa(datos){
 		if (mapa == undefined){
 			mapa = new google.maps.Map(document.getElementById("mapa"), {
@@ -94,6 +71,52 @@ function callOrdenTrabajo(idOrden){
 	}, 3000);
 	
 	
+	$("#btnCamara").click(function(){
+		var el = $(this);
+		navigator.camera.getPicture(function(imageURI){
+			agregarFoto(imageURI, el);
+		}, function(message){
+			alertify.error("Ocurrio un error al obtener la imagen");
+		}, {
+			quality: 100,
+			destinationType: Camera.DestinationType.DATA_URL,
+			encodingType: Camera.EncodingType.JPEG,
+			targetWidth: 500,
+			targetHeight: 500,
+			correctOrientation: true,
+			allowEdit: false,
+			saveToPhotoAlbum: false
+		});
+	});
+	
+	$("#btnGaleria").click(function(){
+		var el = $(this);
+		navigator.camera.getPicture(function(imageURI){
+			agregarFoto(imageURI, el);
+		}, function(message){
+			alertify.error("Ocurrio un error al obtener la imagen");
+		}, {
+			quality: 100,
+			destinationType: Camera.DestinationType.DATA_URL,
+			encodingType: Camera.EncodingType.JPEG,
+			targetWidth: 500,
+			targetHeight: 500,
+			correctOrientation: true,
+			allowEdit: false,
+			sourceType: navigator.camera.PictureSourceType.SAVEDPHOTOALBUM
+		});
+	});
+	
+	function agregarFoto(imageURI, el){
+		$("#addImagen").find("img").remove();
+		var img = $("<img />",{
+			"src": "data:image/jpeg;base64," + imageURI,
+			"src2": imageURI
+		});
+		
+		$("#addImagen").append(img);
+	}
+
 	
 	
 	$("#frmEvidencia").validate({
@@ -109,6 +132,7 @@ function callOrdenTrabajo(idOrden){
 				"latitude": coordenadas.latitude,
 				"longitude": coordenadas.longitude,
 				"comentario": $(form).find("#txtComentario").val(),
+				"imagen": $("#addImagen").find("img").attr("src2"),
 				"fn": {
 					before: function(){
 						blockUI("Cargando detalle del servicio");
@@ -149,5 +173,9 @@ function callOrdenTrabajo(idOrden){
 				}
 			})
 		}
+	});
+	
+	$('#winReporte').on('show.bs.modal', function(){
+		$("#addImagen").find("img").remove();
 	});
 }

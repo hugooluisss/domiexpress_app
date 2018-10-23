@@ -1,0 +1,48 @@
+<ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+	<li class="nav-item">
+		<a class="nav-link active" id="home-tab" data-toggle="tab" href="#perfil" role="tab" aria-controls="perfil" aria-selected="true"><i class="fa fa-3x fa-address-card-o" aria-hidden="true"></i><br />Perfil</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" id="profile-tab" data-toggle="tab" href="#dvAdjudicadas" role="tab" aria-controls="dvAdjudicadas" aria-selected="false">
+			<i class="fa fa-3x fa-motorcycle" aria-hidden="true"></i><br />
+			Adjudicadas</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" id="contact-tab" data-toggle="tab" href="#dvDisponibles" role="tab" aria-controls="dvDisponibles" aria-selected="false">
+			<i class="fa fa-3x fa-plus-square" aria-hidden="true"></i><br />
+			Nuevos
+		</a>
+	</li>
+</ul>
+
+
+<div class="tab-content" id="myTabContent">
+	<div class="tab-pane fade show active" id="perfil" role="tabpanel" aria-labelledby="home-tab">
+		<div class="card bienvenida">
+			<div class="card-body">
+				<div class="row">
+					<div class="col-12 col-md-3 text-center">
+						<img src="img/logoCircular.png" alt="Foto de perfil" class="img-thumbnail" id="fotoPerfil">
+						<br />
+						<a href="#" class="btn btn-xs btn-default perfilCamara" title="Tomar fotografía"><i class="fa fa-camera" aria-hidden="true"></i></a>
+						<a href="#" class="btn btn-xs btn-default perfilGaleria" title="Subir desde la galería"><i class="fa fa-picture-o" aria-hidden="true"></i></a>
+					</div>
+					<div class="col-12 col-md-9 text-center">
+						<h4>Bienvenido</h4>
+						<h5 class="" campo="nombre"></h5>
+					</div>
+				</div>				
+			</div>
+		</div>
+	</div>
+	<div class="tab-pane fade" id="dvAdjudicadas" role="tabpanel" aria-labelledby="profile-tab">
+		<ul class="list-group">
+			
+		</ul>
+	</div>
+	<div class="tab-pane fade" id="dvDisponibles" role="tabpanel" aria-labelledby="contact-tab">
+		<ul class="list-group">
+			
+		</ul>
+	</div>
+</div>

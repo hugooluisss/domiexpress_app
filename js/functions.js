@@ -1,6 +1,6 @@
 server = "http://dashboard.nomastenencias.com/";
 server = "http://192.168.2.2/domiExp/";
-//server = "http://localhost/crm_gestor/";
+server = "http://localhost/domiExp/";
 
 var nameSesion = "domi";
 var idUsuario = undefined;

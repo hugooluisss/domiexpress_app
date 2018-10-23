@@ -1,11 +1,13 @@
 function callOrdenVista(idOrden){
-	console.info("Llalmando a vista previa de la orden");
+	console.info("Llamando a vista previa de la orden");
 	$("#modulo").attr("modulo", "orden").html(plantillas["ordenVistaPrevia"]);
 	setPanel($("#modulo"));
 	console.info("Carga de la vista previa finalizada");
 	var orden = new TOrden;
 	var mapa = undefined;
 	var datosOrden = undefined;
+	
+	
 	
 	mensajes.log({"mensaje": "Estamos obteniendo tu ubicación"});
 	navigator.geolocation.getCurrentPosition(function(){

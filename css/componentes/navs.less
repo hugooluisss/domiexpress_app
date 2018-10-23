@@ -1,0 +1,152 @@
+.nav{
+	font-size: 14px;
+	color: white;
+	width: 100%;
+	.degradado(@verde1, @verde2);
+	
+	.nav-link{
+		color: white;
+		
+		&:hover{
+			border: none;
+		}
+		
+		i{
+			width: 100%;
+		}
+	}
+	
+	position: fixed;
+	top: 60px;
+	border: none;
+}
+
+.tab-content{
+	.tab-pane{
+		&.bgWhite{
+			background: white;
+		}
+	}
+}
+
+
+#menu{
+	//border-bottom: 1px solid @menu-botones-borde-color;
+	position: fixed;
+	//top: 50px;
+	z-index: 9;
+	width: 100%;
+	height: 60px;
+	
+	a{	
+		&[role=button]{
+			background: #CEF6E3;
+			border: none;
+			border-right: none;
+			border-radius:inherit;
+			&:last-child{
+				border: none;
+			}
+			
+			.fa-stack{
+				width: auto;
+			}
+			
+			i.fa{
+			}
+			
+			[campo=nombre]{
+				font-size: 9px;
+				width: 100%;
+				padding-top: 10px;
+				padding-bottom: 0px;
+			}
+			
+			.navbar-brand{
+				
+				img{
+					width: 30px;
+					height: 30px;
+				}
+			}
+		}
+	}
+}
+
+.navbar{
+	border: none;
+	.navbar-header{
+		text-align: center;
+		.navbar-toggle{
+			border: none;
+			
+			&:hover{
+				background: @verde1 + #010;
+				color: white;
+			}
+		}
+		
+		.navbar-brand{
+			padding-right: 0px;
+			padding-top: 0px;
+			padding-left: 0px;
+			left: 50%;
+			position: absolute;
+			
+			top: 5px;
+			margin-left: -15px;
+					
+			img{
+				width: 55px;
+			}
+		}
+	}
+	
+	.collapsing{
+		background: white;
+	}
+	
+	.collapse{
+		background: white;
+		max-height: none;
+		a{
+			&.action{
+				color: white;
+			}
+			
+			&.nav-link{
+				float: left;
+				width: 50%;
+				
+				@media(max-width: @mq-xs-max){
+					width: 100%;
+				}
+				
+				font-weight: normal;
+				&:hover{
+					text-decoration: none;
+				}
+			}
+		}
+		
+		.list-group-item{
+			color: @verde2;
+		}
+	}
+	
+	#fotoPerfil{
+		width: 150px;
+		height: 150px;
+	}
+}
+
+
+
+
+.nav-pills{
+	.nav-item{
+		&.active, .active{
+			background: @verde2;
+		}
+	}
+}
