@@ -100,4 +100,22 @@ TUsuario = function(chofer){
 					datos.fn.after(resp);
 			}, "json");
 	}
+	
+	this.getMovimientos = function(datos){
+		if (datos.fn.before !== undefined) datos.fn.before();
+		
+		$.post(server + 'listamovimientosrunner', {
+				"runner": self.idUsuario,
+				"inicio": datos.inicio,
+				"fin": datos.fin,
+				"json": true,
+				"movil": true
+			}, function(resp){
+				if (resp.band == false)
+					console.log(resp.mensaje);
+					
+				if (datos.fn.after !== undefined)
+					datos.fn.after(resp);
+			}, "json");
+	}
 };

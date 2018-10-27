@@ -63,7 +63,7 @@ function callLogin(){
 							window.localStorage.removeItem(nameSesion);
 							window.localStorage.setItem(nameSesion, data.idUsuario);
 							
-							//location.href = "inicio.html";
+							location.href = "inicio.html";
 						}
 					}
 				}

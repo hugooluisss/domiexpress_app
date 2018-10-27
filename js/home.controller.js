@@ -23,20 +23,29 @@ function callHome(){
 			"movil": true,
 			"json": true
 		}, function(ordenes){
-			$(".list-group").find("a").remove();
+			$("#ordenes").find("a").remove();
 			$.each(ordenes, function(i, orden){
 				pl = $(plantillas["itemOrden"]);
 				setDatos(pl, orden);
 				
 				pl.attr("idOrden", orden.idOrden);
+				pl.attr("estado", orden.idEstado);
 				pl.click(function(){
-					callOrdenTrabajo($(this).attr("idOrden"));
+					console.log($(this).attr("estado"));
+					switch($(this).attr("estado")){
+						case '2':
+							callOrdenTrabajo($(this).attr("idOrden"));
+						break;
+						case '3': case '4':
+							callOrdenTerminada($(this).attr("idOrden"));
+						break;
+					}
 				});
 				
 				pl.find("[campo=nombreEstado]").css("color", orden.colorEstado);
 				pl.find("[campo=folio]").css("color", orden.colorEstado);
 				
-				$(".list-group").append(pl);
+				$("#ordenes").append(pl);
 			});
 		}, "json");
 	}
@@ -59,7 +68,7 @@ function callHome(){
 					callOrdenVista($(this).attr("idOrden"));
 				});
 				
-				$(".list-group").append(pl);
+				$("#ordenes").append(pl);
 			});
 		}, "json");
 	}
