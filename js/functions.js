@@ -160,4 +160,8 @@ function getPlantillas(after){
 
 function activarNotificaciones(){
 	window.plugins.PushbotsPlugin.initialize("5bd493e30540a359c506c9c7", {"android":{"sender_id":"88479654937"}});
+	
+	window.plugins.PushbotsPlugin.resetBadge();
+	window.plugins.PushbotsPlugin.toggleNotifications(true);
+	window.plugins.PushbotsPlugin.setAlias("runner_" + objUsuario.idUsuario);
 }

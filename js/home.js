@@ -69,10 +69,6 @@ var app = {
 			// userId = data.userId
 		});
 		
-		window.plugins.PushbotsPlugin.resetBadge();
-		window.plugins.PushbotsPlugin.toggleNotifications(true);
-		window.plugins.PushbotsPlugin.setAlias("runner_" + objUsuario.idUsuario);
-		
 		document.addEventListener('deviceready', this.onDeviceReady, false);
 	},
 	// deviceready Event Handler
