@@ -7,8 +7,6 @@ function callOrdenVista(idOrden){
 	var mapa = undefined;
 	var datosOrden = undefined;
 	
-	
-	
 	mensajes.log({"mensaje": "Estamos obteniendo tu ubicación"});
 	navigator.geolocation.getCurrentPosition(function(){
 		}, function(){
@@ -46,8 +44,10 @@ function callOrdenVista(idOrden){
 							if (resp.band){
 								mensajes.alert({"titulo": "Felicidades", "mensaje": "Felicidades, la carga con folio " + datosOrden.folio + " te fue asignada, ahora preparate para realizar el servicio en tiempo y forma"});
 								callHome();
-							}else
+							}else if(resp.mensaje == '')
 								mensajes.alert({"titulo": "Error", "mensaje": "No pudo ser asignada la carga"});
+							else
+								mensajes.alert({"titulo": "Error", "mensaje": resp.mensaje});
 						}
 					}
 				});

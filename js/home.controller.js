@@ -5,6 +5,9 @@ function callHome(){
 	console.info("Carga de home finalizada");
 	getListaOrdenesUsuario();
 	
+	$("#ordenes").height($(window).height()- 160);
+	console.log($(window).height()- 150);
+	
 	$("#btnAdjudicadas").click(function(){
 		$(".nav-item").removeClass("active");
 		$(this).addClass("active");
@@ -24,6 +27,11 @@ function callHome(){
 			"json": true
 		}, function(ordenes){
 			$("#ordenes").find("a").remove();
+			$(".list-group").find("p").remove();
+			
+			if (ordenes.length == 0)
+				$("#ordenes").html(plantillas["sinOrdenesAsignadas"]);
+			
 			$.each(ordenes, function(i, orden){
 				pl = $(plantillas["itemOrden"]);
 				setDatos(pl, orden);
@@ -56,6 +64,9 @@ function callHome(){
 			"json": true
 		}, function(ordenes){
 			$(".list-group").find("a").remove();
+			$(".list-group").find("p").remove();
+			if (ordenes.length == 0)
+				$("#ordenes").html(plantillas["sinOrdenesPublicadas"]);
 			$.each(ordenes, function(i, orden){
 				pl = $(plantillas["itemOrden"]);
 				

@@ -1,6 +1,6 @@
 server = "http://dashboard.nomastenencias.com/";
 server = "http://192.168.2.2/domiExp/";
-server = "http://192.168.0.8/domiExp/";
+server = "http://192.168.0.5/domiExp/";
 
 var nameSesion = "domi";
 var idUsuario = undefined;
@@ -119,7 +119,9 @@ var mensajes = {
 function setDatos(plantilla, datos, before){
 	before = before == undefined?'':(before + "-");
 	
-	$.each(datos, function(i, valor){
+	for(i in datos){
+	//$.each(datos, function(i, valor){
+		valor = datos[i];
 		antes = plantilla.find("[campo=" + before + i + "]").attr("before") || ""; 
 		despues = plantilla.find("[campo=" + before + i + "]").attr("after") || ""; 
 		valor =  antes + valor + despues;
@@ -128,7 +130,7 @@ function setDatos(plantilla, datos, before){
 		
 		if (typeof datos[i] == 'object')
 			setDatos(plantilla, datos[i], i);
-	});
+	};
 }
 
 function setPanel(el){

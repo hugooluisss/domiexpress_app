@@ -72,6 +72,10 @@ var app = {
 		*/
 		
 		document.addEventListener('deviceready', this.onDeviceReady, false);
+		
+		document.addEventListener("backbutton", function(){
+			mensajes.log({"titulo": "DOMI", "mensajes": "Botón deshabilitado"});
+		}, false);
 	},
 	// deviceready Event Handler
 	//
@@ -89,7 +93,13 @@ $(document).ready(function(){
 	if (!objUsuario.isLogin())
 		location.href = "index.html";
 		
-	
+	objUsuario.getData({
+		fn: {
+			after: function(resp){
+				mensajes.log({"mensaje": "Bienvenido " + resp.nombre.replace(/\b\w/g, l => l.toUpperCase())});
+			}
+		}
+	});
 	plantillas["home"] = "";
 	plantillas["itemOrden"] = "";
 	plantillas["ordenVistaPrevia"] = "";
@@ -98,6 +108,8 @@ $(document).ready(function(){
 	plantillas["estadoCuenta"] = "";
 	plantillas["cargo"] = "";
 	plantillas["abono"] = "";
+	plantillas["sinOrdenesPublicadas"] = "";
+	plantillas["sinOrdenesAsignadas"] = "";
 	
 	setPanel();
 	
@@ -105,6 +117,7 @@ $(document).ready(function(){
 		callPanel("home");
 	});
 	
+	$("#navbarSupportedContent").height($(window).height() + "px");
 	//app.onDeviceReady();
 });
 
