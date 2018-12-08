@@ -1,6 +1,6 @@
 server = "http://dashboard.nomastenencias.com/";
 server = "http://192.168.2.2/domiExp/";
-server = "http://192.168.0.5/domiExp/";
+server = "http://192.168.0.4/domiExp/";
 
 var nameSesion = "domi";
 var idUsuario = undefined;
