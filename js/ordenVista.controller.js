@@ -7,6 +7,8 @@ function callOrdenVista(idOrden){
 	var mapa = undefined;
 	var datosOrden = undefined;
 	
+	height100($("#generales"));
+	
 	mensajes.log({"mensaje": "Estamos obteniendo tu ubicación"});
 	navigator.geolocation.getCurrentPosition(function(){
 		}, function(){

@@ -5,8 +5,7 @@ function callHome(){
 	console.info("Carga de home finalizada");
 	getListaOrdenesUsuario();
 	
-	$("#ordenes").height($(window).height()- 160);
-	console.log($(window).height()- 150);
+	height100($("#ordenes"));
 	
 	$("#btnAdjudicadas").click(function(){
 		$(".nav-item").removeClass("active");

@@ -8,6 +8,7 @@ function callEstadoCuenta(){
 		fn: {
 			after: function(resp){
 				setDatos($("#modulo"), resp);
+				height100($(".movimientos"), 50);
 			}
 		}
 	});

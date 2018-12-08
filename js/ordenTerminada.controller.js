@@ -3,6 +3,7 @@ function callOrdenTerminada(idOrden){
 	$("#modulo").attr("modulo", "orden").html(plantillas["ordenTerminada"]);
 	setPanel($("#modulo"));
 	console.info("Carga de la orden finalizada");
+	height100($("#generales"));
 	var orden = new TOrden;
 	
 	orden.get({

@@ -167,3 +167,11 @@ function activarNotificaciones(){
 	window.plugins.PushbotsPlugin.toggleNotifications(true);
 	window.plugins.PushbotsPlugin.setAlias("runner_" + objUsuario.idUsuario);
 }
+
+function height100(el, menos){
+	if (menos == undefined) menos = 0;
+	var pos = el.offset();
+	el.height($(window).height() - pos.top - menos);
+	console.log($(window).height(), pos);
+	el.css("overflow", "scroll");
+}
