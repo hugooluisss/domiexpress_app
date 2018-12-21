@@ -137,3 +137,18 @@ function callPanel(panel){
 			console.info("Panel no encontrado");
 	}
 }
+
+function callLogout(){
+	try{
+		window.localStorage.removeItem(nameSesion);
+		window.localStorage.removeItem(nameSesion);
+		
+		//window.plugins.PushbotsPlugin.removeTags(["transporitsta"]);
+		//window.plugins.PushbotsPlugin.removeAlias();
+		location.href = "index.html";
+	}catch(error){
+		window.localStorage.removeItem("session_crm");
+		window.localStorage.removeItem("session");
+		location.href = "index.html";
+	}
+}
