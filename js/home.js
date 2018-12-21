@@ -113,6 +113,10 @@ $(document).ready(function(){
 	
 	setPanel();
 	
+	$("[action=salir]").click(function(){
+		callLogout();
+	});
+	
 	getPlantillas(function(){
 		callPanel("home");
 	});
