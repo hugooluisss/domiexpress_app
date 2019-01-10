@@ -129,26 +129,31 @@ function callOrdenTrabajo(idOrden){
 		},
 		wrapper: 'span',
 		submitHandler: function(form){
-			orden.addEvidencia({
-				"orden": idOrden,
-				"latitude": coordenadas.latitude,
-				"longitude": coordenadas.longitude,
-				"comentario": $(form).find("#txtComentario").val(),
-				"imagen": $("#addImagen").find("img").attr("src2"),
-				"fn": {
-					before: function(){
-						blockUI("Cargando detalle del servicio");
-					},
-					after: function(resp){
-						unBlockUI();
-						if (resp.band){
-							mensajes.log({"mensaje": "Tu evidencia fue guardada"});
-							$("#winReporte").modal("hide")
-						}else
-							mensajes.alert({"titulo": "Error", "mensaje": "No pudo ser guardada tu evidencia"});
+			if ($(".addImagen").find("img").length > 0)
+				orden.addEvidencia({
+					"orden": idOrden,
+					"latitude": coordenadas.latitude,
+					"longitude": coordenadas.longitude,
+					"comentario": $(form).find("#txtComentario").val(),
+					"imagen": $("#addImagen").find("img").attr("src2"),
+					"fn": {
+						before: function(){
+							blockUI("Cargando detalle del servicio");
+						},
+						after: function(resp){
+							unBlockUI();
+							if (resp.band){
+								mensajes.log({"mensaje": "Tu evidencia fue guardada"});
+								$("#frmEvidencia").get(0).reset();
+								$("#winReporte").modal("hide");
+								$(".addImagen").find("img").remove();
+							}else
+								mensajes.alert({"titulo": "Error", "mensaje": "No pudo ser guardada tu evidencia"});
+						}
 					}
-				}
-			});
+				});
+			}else
+				mensajes.alert({"titulo": "Evidencias", "mensaje": "Es necesaria una fotografía"});
 		}
 	});
 	
