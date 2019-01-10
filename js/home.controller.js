@@ -3,7 +3,12 @@ function callHome(){
 	$("#modulo").attr("modulo", "home").html(plantillas["home"]);
 	setPanel($("#modulo"));
 	console.info("Carga de home finalizada");
-	getListaOrdenesUsuario();
+	
+	var posicionActual;
+	navigator.geolocation.getCurrentPosition(function(pos){
+		posicionActual = pos.coords;
+		getListaOrdenesUsuario();
+	});
 	
 	height100($("#ordenes"));
 	
@@ -22,6 +27,8 @@ function callHome(){
 	function getListaOrdenesUsuario(){
 		$.post(server + "listaordenesrunner", {
 			"runner": objUsuario.idUsuario,
+			"latitude": posicionActual.latitude,
+			"longitude": posicionActual.longitude,
 			"movil": true,
 			"json": true
 		}, function(ordenes){
@@ -82,11 +89,6 @@ function callHome(){
 			});
 		}, "json");
 	}
-	
-	
-	
-	
-	
 	
 	objUsuario.getData({
 		fn: {
