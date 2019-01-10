@@ -43,6 +43,11 @@
 		<!-- Core plugins -->
 		<!-- Third party plugins -->
 		<!-- A list of available plugins are available at https://build.phonegap.com/plugins -->
+		
+		<plugin name="cordova-plugin-camera" source="npm" spec="2.4.1">
+			<variable name="CAMERA_USAGE_DESCRIPTION" value="Para tomar fotografias a las evidencias de los servicios" />
+			<variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="Obtiene fotografias de las evidencias de los servicios de tu galeria" />
+		</plugin>
 
 		<!--<plugin name="cordova-plugin-barcodescanner" source="npm" />-->
 		<plugin name="cordova.plugins.diagnostic" source="npm" />
