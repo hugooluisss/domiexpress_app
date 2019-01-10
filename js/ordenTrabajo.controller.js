@@ -129,7 +129,7 @@ function callOrdenTrabajo(idOrden){
 		},
 		wrapper: 'span',
 		submitHandler: function(form){
-			if ($(".addImagen").find("img").length > 0)
+			if ($(".addImagen").find("img").length > 0){
 				orden.addEvidencia({
 					"orden": idOrden,
 					"latitude": coordenadas.latitude,
