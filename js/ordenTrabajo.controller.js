@@ -110,13 +110,13 @@ function callOrdenTrabajo(idOrden){
 	});
 	
 	function agregarFoto(imageURI, el){
-		$("#addImagen").find("img").remove();
+		$(".addImagen").find("img").remove();
 		var img = $("<img />",{
 			"src": "data:image/jpeg;base64," + imageURI,
 			"src2": imageURI
 		});
 		
-		$("#addImagen").append(img);
+		$(".addImagen").append(img);
 	}
 
 	

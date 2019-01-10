@@ -51,7 +51,6 @@
 
 		<!--<plugin name="cordova-plugin-barcodescanner" source="npm" />-->
 		<plugin name="cordova.plugins.diagnostic" source="npm" />
-		<plugin name="cordova-plugin-camera" source="npm" spec="2.4.1"/>
 		<plugin name="cordova-plugin-dialogs" source="npm"/>
 		<plugin name="cordova-plugin-network-information" source="npm"/>
 		<plugin name="cordova-plugin-device" source="npm"/>
