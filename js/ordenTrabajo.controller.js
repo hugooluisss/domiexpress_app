@@ -82,10 +82,10 @@ function callOrdenTrabajo(idOrden){
 		}, {
 			quality: 100,
 			destinationType: Camera.DestinationType.DATA_URL,
-			encodingType: Camera.EncodingType.JPEG,
-			targetWidth: 500,
-			targetHeight: 500,
-			correctOrientation: true,
+			encodingType: 0,
+			targetWidth: 600,
+			targetHeight: 600,
+			correctOrientation: false,
 			allowEdit: false,
 			saveToPhotoAlbum: false
 		});
