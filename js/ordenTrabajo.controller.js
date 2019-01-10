@@ -73,7 +73,7 @@ function callOrdenTrabajo(idOrden){
 	}, 3000);
 	
 	
-	$("#btnCamara").click(function(){
+	$("#btnCamera").click(function(){
 		var el = $(this);
 		navigator.camera.getPicture(function(imageURI){
 			agregarFoto(imageURI, el);
@@ -83,8 +83,8 @@ function callOrdenTrabajo(idOrden){
 			quality: 100,
 			destinationType: Camera.DestinationType.DATA_URL,
 			encodingType: 0,
-			targetWidth: 600,
-			targetHeight: 600,
+			targetWidth: 500,
+			targetHeight: 500,
 			correctOrientation: false,
 			allowEdit: false,
 			saveToPhotoAlbum: false
