@@ -122,7 +122,7 @@ $(document).ready(function(){
 	});
 	
 	$("#navbarSupportedContent").height($(window).height() + "px");
-	//app.onDeviceReady();
+	app.onDeviceReady();
 });
 
 function callPanel(panel){
