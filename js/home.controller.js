@@ -4,18 +4,33 @@ function callHome(){
 	setPanel($("#modulo"));
 	console.info("Carga de home finalizada");
 	
-	var posicionActual;
-	navigator.geolocation.getCurrentPosition(function(pos){
-		posicionActual = pos.coords;
-		getListaOrdenesUsuario();
-	});
+	var posicionActual = undefined;
 	
+	function getPosicionActual(fn){
+		blockUI("Estamos obteniendo tu ubicación");
+		navigator.geolocation.getCurrentPosition(function(pos){
+			posicionActual = pos.coords;
+			getListaOrdenesUsuario();
+			console.info("Obtiendo lista");
+			unBlockUI();
+		});
+		
+		if (fn != undefined)
+			if (fn.after != undefined)
+				fn.after();
+	}
+	
+	getPosicionActual();
 	height100($("#ordenes"));
 	
 	$("#btnAdjudicadas").click(function(){
 		$(".nav-item").removeClass("active");
 		$(this).addClass("active");
-		getListaOrdenesUsuario();
+		
+		if (posicionActual == undefined)
+			getPosicionActual();
+		else
+			getListaOrdenesUsuario();
 	});
 	
 	$("#btnNuevas").click(function(){
@@ -25,6 +40,7 @@ function callHome(){
 	});
 	
 	function getListaOrdenesUsuario(){
+		blockUI("Espera en lo que obtenemos tus servicios asignados");
 		$.post(server + "listaordenesrunner", {
 			"runner": objUsuario.idUsuario,
 			"latitude": posicionActual.latitude,
@@ -60,11 +76,13 @@ function callHome(){
 				pl.find("[campo=folio]").css("color", orden.colorEstado);
 				
 				$("#ordenes").append(pl);
+				unBlockUI();
 			});
 		}, "json");
 	}
 	
 	function getListaPublicadas(){
+		blockUI("Espera estamos buscando nuevos servicios");
 		$.post(server + "listaordenespublicadas", {
 			"movil": true,
 			"json": true
@@ -86,6 +104,8 @@ function callHome(){
 				});
 				
 				$("#ordenes").append(pl);
+				
+				unBlockUI();
 			});
 		}, "json");
 	}
