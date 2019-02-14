@@ -18,6 +18,8 @@
  */
 var objUsuario = null;
 var plantillas = {};
+var posicionActual = undefined;
+
 var app = {
 	// Application Constructor
 	initialize: function() {

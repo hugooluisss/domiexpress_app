@@ -4,8 +4,6 @@ function callHome(){
 	setPanel($("#modulo"));
 	console.info("Carga de home finalizada");
 	
-	var posicionActual = undefined;
-	
 	function getPosicionActual(fn){
 		blockUI("Estamos obteniendo tu ubicación");
 		navigator.geolocation.getCurrentPosition(function(pos){
@@ -26,7 +24,6 @@ function callHome(){
 	$("#btnAdjudicadas").click(function(){
 		$(".nav-item").removeClass("active");
 		$(this).addClass("active");
-		
 		if (posicionActual == undefined)
 			getPosicionActual();
 		else
