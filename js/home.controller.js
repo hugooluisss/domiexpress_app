@@ -104,9 +104,9 @@ function callHome(){
 				});
 				
 				$("#ordenes").append(pl);
-				
-				unBlockUI();
 			});
+			
+			unBlockUI();
 		}, "json");
 	}
 	

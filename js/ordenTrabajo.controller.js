@@ -50,6 +50,7 @@ function callOrdenTrabajo(idOrden){
 		posicionActual.setMap(mapa);
 	}
 	
+	/*
 	miUbicacion();
 	function miUbicacion(){
 		if ($("#winReporte").length > 0){
@@ -71,8 +72,8 @@ function callOrdenTrabajo(idOrden){
 	var ciclo = setInterval(function(){
 		miUbicacion();
 	}, 3000);
-	
-	
+	*/
+	/*
 	$("#btnCamera").click(function(){
 		var el = $(this);
 		navigator.camera.getPicture(function(imageURI){
@@ -156,7 +157,7 @@ function callOrdenTrabajo(idOrden){
 				mensajes.alert({"titulo": "Evidencias", "mensaje": "Es necesaria una fotografía"});
 		}
 	});
-	
+	*/
 	$("#btnEnviarCalificacion").click(function(){
 		var calificacion = $('input[name=estrellas]:checked').val();
 		if (calificacion == undefined)

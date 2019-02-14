@@ -8,7 +8,7 @@
 	<li class="nav-item">
 		<a class="nav-link" data-toggle="tab" href="#acciones">
 			<i class="fa fa-2x fa-map-signs" aria-hidden="true"></i>
-			Evidencias
+			Ubicación
 		</a>
 	</li>
 </ul>
@@ -25,18 +25,24 @@
 			<li campo="ganancia" before='<i class="fa fa-money" aria-hidden="true"></i> ' after=" de Ganancia" class="list-group-item"></li>
 		</ul>
 		<br />
-		<div class="btn btn-danger btn-block" showpanel="home"><i class="fa fa-back" aria-hidden="true"></i> Regresar</div>
-	</div>
-	<div id="acciones" class="tab-pane fade">
-		<div id="mapa"></div>
 		<div class="row flotantes">
 			<div class="col-6">
-				<button class="btn btn-primary btn-block" data-toggle="modal" data-target="#winReporte">Enviar evidencias</button>
+				<div class="btn btn-danger btn-block" showpanel="home"><i class="fa fa-back" aria-hidden="true"></i> Regresar</div>
 			</div>
 			<div class="col-6">
-				<button class="btn btn-danger btn-block" data-toggle="modal" data-target="#winFinalizar">Finalizar trabajo</button>
+				<button class="btn btn-success btn-block" data-toggle="modal" data-target="#winFinalizar">Finalizar trabajo</button>
 			</div>
 		</div>
+	</div>
+	<div id="acciones" class="tab-pane fade">
+		<!--
+		<div class="row flotantes">
+			<div class="col-6 offset-3">
+				<button class="btn btn-primary btn-block" data-toggle="modal" data-target="#winReporte">Enviar evidencias</button>
+			</div>
+		</div>
+		-->
+		<div id="mapa"></div>
 	</div>
 </div>
 
@@ -44,7 +50,7 @@
 
 
 
-
+<!--
 
 
 
@@ -54,13 +60,11 @@
 	<div class="modal" id="winReporte">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<!-- Modal Header -->
 				<div class="modal-header">
 					<h5 class="modal-title">Enviar evidencia</h5>
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
 				</div>
 		
-				<!-- Modal body -->
 				<div class="modal-body">
 					<div class="row">
 						<div class="col-12 addImagen text-center">
@@ -78,7 +82,6 @@
 					</div>
 				</div>
 		
-				<!-- Modal footer -->
 				<div class="modal-footer">
 					<button type="submit" class="btn btn-primary">Enviar</button>
 					<button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
@@ -88,7 +91,7 @@
 	</div>
 </form>
 
-
+-->
 <div class="modal" id="winFinalizar">
 	<div class="modal-dialog">
 		<div class="modal-content">
