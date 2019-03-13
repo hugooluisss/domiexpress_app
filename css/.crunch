@@ -1,0 +1,38 @@
+{
+	"files": {
+		"style.less": {
+			"engines": [
+				{
+					"compiler": "less",
+					"output": "style.css",
+					"options": {
+						"compress": false,
+						"ieCompat": false,
+						"strictMath": false,
+						"strictUnits": false,
+						"javascriptEnabled": false,
+						"sourceMap": true,
+						"sourcemap": true
+					}
+				}
+			],
+			"sources": [
+				"componentes/blockUI.less",
+				"componentes/buttons.less",
+				"componentes/card.less",
+				"componentes/funciones.less",
+				"componentes/import.less",
+				"componentes/navs.less",
+				"componentes/text.less",
+				"componentes/validate.less",
+				"layout/home.less",
+				"layout/import.less",
+				"layout/login.less",
+				"layout/modulos/estadoCuenta.less",
+				"layout/modulos/home.less",
+				"layout/modulos/orden.less",
+				"variables.less"
+			]
+		}
+	}
+}
