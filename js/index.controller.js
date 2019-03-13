@@ -4,6 +4,6 @@ function callIndex(){
 }
 
 function callLogout(){
-	window.localStorage.removeItem("session_crm");
+	window.localStorage.removeItem("session_drunner");
 	location.href = "index.html";
 }

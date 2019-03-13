@@ -76,7 +76,7 @@ var app = {
 		document.addEventListener('deviceready', this.onDeviceReady, false);
 		
 		document.addEventListener("backbutton", function(){
-			mensajes.log({"titulo": "DOMI", "mensajes": "Botón deshabilitado"});
+			mensajes.log({"titulo": "Drunner", "mensajes": "Botón deshabilitado"});
 		}, false);
 	},
 	// deviceready Event Handler
