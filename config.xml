@@ -5,8 +5,8 @@
 		id    = "com.domiexpress.app"
 		version  = "1.0.0">  
 
-		<name>DOMI express</name>
-		<description>Nos dedicamos a satisfacer las necesidades de mensajeria empresarial llevandola a otro nivel de efectividad.</description>
+		<name>Drunner</name>
+		<description>Nos dedicamos a satisfacer las necesidades de mensajeria llevandola a otro nivel de efectividad.</description>
 		<!--
 			If you do not want any permissions to be added to your app, add the
 			following tag to your config.xml; you will still have the INTERNET
