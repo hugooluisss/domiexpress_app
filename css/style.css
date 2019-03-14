@@ -1,0 +1,316 @@
+.fontRoboto {
+  font-family: 'Roboto', sans-serif;
+}
+/*Colores*/
+body[layout="login"] {
+  background-image: url('../img/backgroundLogin.jpg');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #088A68;
+}
+body[layout="login"] h5 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+body[layout="login"] .logo {
+  margin-top: 80px;
+}
+body[layout="home"] {
+  background: #F2F2F2;
+  background: url("../img/background.png") no-repeat right bottom;
+  background-size: cover;
+}
+body[layout="home"] nav.navbar-fixed-top {
+  background: linear-gradient(to right, #20aada, #13a8a1);
+}
+body[layout="home"] .collapse.show {
+  border: 2px solid #13a8a1;
+}
+body[layout="home"] #home {
+  text-align: center;
+  overflow-x: hidden;
+}
+body[layout="home"] #home .container {
+  padding-top: 60px;
+}
+body[layout="home"] [modulo=home] #ordenes {
+  margin-top: 130px;
+  overflow-y: scroll;
+}
+body[layout="home"] [modulo=home] #ordenes .orden {
+  font-size: 12px;
+}
+body[layout="home"] [modulo=home] #ordenes .orden h5 {
+  font-size: 15px;
+}
+body[layout="home"] [modulo=home] #fotoPerfil {
+  max-height: 100px;
+  max-width: 100px;
+}
+body[layout="home"] [modulo=home] .bienvenida {
+  height: 100%;
+}
+body[layout="home"] [modulo=home] .bienvenida [campo=nombre] {
+  text-transform: capitalize;
+}
+@media (max-width: 767px) {
+  body[layout="home"] [modulo=home] .servicios {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}
+body[layout="home"] [modulo=home] .servicios .card-body {
+  min-height: 200px;
+  max-height: 300px;
+  overflow-x: scroll;
+}
+body[layout="home"] [modulo=home] .servicios .orden [campo=direccion] {
+  font-size: 12px;
+}
+body[layout="home"] [modulo=orden] {
+  padding-top: 70px;
+}
+body[layout="home"] [modulo=orden] #mapa {
+  height: 300px;
+}
+body[layout="home"] [modulo=orden] .calificacion {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+body[layout="home"] [modulo=orden] .calificacion input[type="radio"] {
+  display: none;
+}
+body[layout="home"] [modulo=orden] .calificacion label {
+  color: #F2F2F2;
+}
+body[layout="home"] [modulo=orden] .calificacion label:hover,
+body[layout="home"] [modulo=orden] .calificacion label:hover ~ label {
+  color: orange;
+}
+body[layout="home"] [modulo=orden] .calificacion input[type="radio"]:checked ~ label {
+  color: orange;
+}
+body[layout="home"] [modulo=orden] .calificacionTerminada i {
+  color: #FAAC58;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+body[layout="home"] [modulo=orden] .tab-content {
+  padding-top: 60px;
+}
+body[layout="home"] [modulo=orden] .tab-content #mapa {
+  min-height: 500px;
+}
+body[layout="home"] [modulo=orden] .flotante .pie {
+  position: fixed;
+  bottom: 20px;
+}
+body[layout="home"] [modulo=orden] #frmEvidencia .addImagen img {
+  max-height: 200px;
+}
+body[layout="home"] [modulo=estadoCuenta] {
+  padding-top: 60px;
+}
+body[layout="home"] [modulo=estadoCuenta] span {
+  font-size: 13px;
+}
+body[layout="home"] [modulo=estadoCuenta] .cargo {
+  border-left: 3px solid blue;
+}
+body[layout="home"] [modulo=estadoCuenta] .abono {
+  border-left: 3px solid red;
+}
+.btn.btn-regresar {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  border: none;
+  box-shadow: none;
+  font-size: 16px;
+  font-family: arial;
+  vertical-align: middle;
+  color: #088A68;
+}
+.btn.btn-regresar i {
+  font-size: 26px;
+}
+.btn.btn-regresar span {
+  top: 8px;
+  position: absolute;
+  left: 45px;
+}
+.btn.btn-link.btn-danger {
+  color: red;
+}
+.btn-group-xs > .btn,
+.btn-xs {
+  padding: .25rem .4rem;
+  font-size: .875rem;
+  line-height: .5;
+  border-radius: .2rem;
+}
+a {
+  color: #088A68;
+}
+.text-primary {
+  color: #A9F5A9;
+}
+#WindowLoad {
+  position: fixed;
+  z-index: 9999;
+  text-align: center;
+  top: 0px;
+  opacity: .6;
+  background: black;
+  color: white;
+}
+#WindowLoad div {
+  font-size: 20px;
+  font-weight: bold;
+}
+.card {
+  padding-bottom: 10px;
+}
+.card.card-tutifruti .card-header {
+  background: linear-gradient(to right, #81F7F3, #088A68);
+}
+.validateError,
+.validateError:focus {
+  border-color: red;
+}
+label.validateError {
+  color: red;
+}
+.nav {
+  font-size: 14px;
+  color: white;
+  width: 100%;
+  background: linear-gradient(to right, #20aada, #13a8a1);
+  position: fixed;
+  top: 60px;
+  border: none;
+}
+.nav .nav-link {
+  color: white;
+}
+.nav .nav-link:hover {
+  border: none;
+}
+.nav .nav-link i {
+  width: 100%;
+}
+.tab-content .tab-pane.bgWhite {
+  background: white;
+}
+#menu {
+  position: fixed;
+  z-index: 9;
+  width: 100%;
+  height: 60px;
+}
+#menu a[role=button] {
+  background: #CEF6E3;
+  border: none;
+  border-right: none;
+  border-radius: inherit;
+}
+#menu a[role=button]:last-child {
+  border: none;
+}
+#menu a[role=button] .fa-stack {
+  width: auto;
+}
+#menu a[role=button] [campo=nombre] {
+  font-size: 9px;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 0px;
+}
+#menu a[role=button] .navbar-brand img {
+  width: 30px;
+  height: 30px;
+}
+.navbar {
+  border: none;
+}
+.navbar .navbar-header {
+  text-align: center;
+}
+.navbar .navbar-header .navbar-toggle {
+  border: none;
+}
+.navbar .navbar-header .navbar-toggle:hover {
+  background: #20bbda;
+  color: white;
+}
+.navbar .navbar-header .navbar-brand {
+  padding-right: 0px;
+  padding-top: 0px;
+  padding-left: 0px;
+  left: 50%;
+  position: absolute;
+  top: 5px;
+  margin-left: -15px;
+}
+.navbar .navbar-header .navbar-brand img {
+  width: 55px;
+}
+.navbar .collapsing {
+  background: white;
+}
+.navbar .collapse {
+  background: white;
+  max-height: none;
+}
+.navbar .collapse a.action {
+  color: white;
+}
+.navbar .collapse a.nav-link {
+  float: left;
+  width: 50%;
+  font-weight: normal;
+}
+@media (max-width: 767px) {
+  .navbar .collapse a.nav-link {
+    width: 100%;
+  }
+}
+.navbar .collapse a.nav-link:hover {
+  text-decoration: none;
+}
+.navbar .collapse .list-group-item {
+  color: #13a8a1;
+}
+.navbar #fotoPerfil {
+  width: 150px;
+  height: 150px;
+}
+.nav-pills .nav-item.active,
+.nav-pills .nav-item .active {
+  background: #13a8a1;
+}
+html,
+body {
+  margin: 0px;
+  height: 100%;
+  overflow: hidden;
+}
+html [panel],
+body [panel] {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: scroll;
+}
+html .row,
+body .row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+html [modulo] > .row:last-child,
+body [modulo] > .row:last-child {
+  margin-bottom: 100px;
+}
+
+/*# sourceMappingURL=style.css.map */
