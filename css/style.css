@@ -312,5 +312,16 @@ html [modulo] > .row:last-child,
 body [modulo] > .row:last-child {
   margin-bottom: 100px;
 }
+html #loader,
+body #loader {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url('../img/logo-mini.png') 50% 50% no-repeat #13a8a1;
+  opacity: 1;
+}
 
 /*# sourceMappingURL=style.css.map */

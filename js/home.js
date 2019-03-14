@@ -91,6 +91,7 @@ var app = {
 app.initialize();
 
 $(document).ready(function(){
+	$("#loader").fadeOut("slow");
 	objUsuario = new TUsuario;
 	if (!objUsuario.isLogin())
 		location.href = "index.html";

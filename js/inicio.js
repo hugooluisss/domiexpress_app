@@ -54,6 +54,9 @@ $(document).ready(function(){
 	getPlantillas(function(){
 		callIndex();
 	});
+	
+	$("#loader").fadeOut("slow");
+	
 	//app.onDeviceReady();
 });
 
