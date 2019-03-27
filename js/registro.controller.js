@@ -29,11 +29,15 @@ function callRegistro(){
 			},
 			txtPass: {
 				required : true
-			}
+			},
+			chkTerminos: "required"
 		},
 		messages: {
 			"txtCorreo": {
 				"remote": "El correo ya se encuentra registrado"
+			},
+			"chkTerminos": {
+				"required": "Conoce y acepta nuestros términos y condiciones"
 			}
 		},
 		wrapper: 'span',
