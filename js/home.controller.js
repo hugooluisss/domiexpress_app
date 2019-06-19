@@ -50,6 +50,9 @@ function callHome(){
 			
 			if (ordenes.length == 0)
 				$("#ordenes").html(plantillas["sinOrdenesAsignadas"]);
+				
+			if (ordenes.length == 0)
+				unBlockUI();
 			
 			$.each(ordenes, function(i, orden){
 				pl = $(plantillas["itemOrden"]);
