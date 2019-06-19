@@ -95,6 +95,7 @@ function callHome(){
 				pl = $(plantillas["itemOrden"]);
 				
 				setDatos(pl, orden);
+				console.log(orden);
 				pl.find("[campo=nombreEstado]").css("color", orden.colorEstado);
 				pl.find("[campo=folio]").css("color", orden.colorEstado);
 				
